@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ellgamll</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+        <div class="navbar"> 
+            <h1>ellgmall</h1>
+            <ul>
+                <li><a class="active" href="#">about me</a></li>
+                <li><a href="#">instagram</a></li>
+                <li><a href="#">youtube</a></li>
+                <li><a href="#" id="login">sign in</a></li>
+                <li><a href="#">sign up</a></li>
+            </ul>
+        </div>
+    <div class="box">    
+        <div class="imge">
+            <div class="logo-content">
+                <img src="G-logo-1.svg" alt="ellgmall logo">
+                <h2>This my instagram account<br><span>front-end/back-end</span></h2>
+                <a href="https://www.instagram.com/ellgamll/" target="_blank">Hire me</a>
+            </div> 
+        </div>
+        <div class="pragraf">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sint inventore saepe facilis quibusdam? Natus aperiam commodi asperiores eum nisi officiis quos odit, itaque velit incidunt minima fuga, accusamus error praesentium vel accusantium in eaque a necessitatibus voluptates corporis. Rem animi et porro optio at neque similique corrupti sapiente libero doloremque odio repudiandae pariatur deserunt nemo velit quaerat assumenda quae esse labore accusantium ipsam exercitationem, iusto ratione provident? Blanditiis laborum, magni autem facilis quis nulla quaerat dolores explicabo qui? Minus libero laboriosam nesciunt itaque dolorum, corrupti voluptate? Odio a minus ipsam, delectus distinctio aperiam quos corrupti, dolorum possimus voluptate deserunt, in commodi adipisci! Eaque blanditiis minus id libero doloremque, aliquam aspernatur modi temporibus iusto commodi maiores culpa ut est eligendi quaerat obcaecati debitis officia maxime distinctio adipisci rerum similique nostrum? Qui vel maiores ratione ducimus doloribus nam repellendus eos aperiam provident odio, reiciendis, laborum adipisci amet totam magni neque beatae soluta delectus vero quis dicta veniam. Modi sint commodi enim impedit omnis similique voluptate amet, voluptatem est, incidunt inventore. Nostrum dolore ipsum fugiat optio quo perferendis ratione minus a, at ipsam, neque nulla, laboriosam accusamus harum impedit officiis blanditiis expedita. Quisquam neque molestias, ut iste deserunt ipsam veritatis temporibus labore dolorem rem aliquam similique earum consequuntur tempora voluptatum a sunt assumenda! Aperiam facilis nemo sit saepe esse corrupti mollitia voluptates necessitatibus dicta amet reiciendis corporis voluptate, est unde. Incidunt dolorum non veritatis laboriosam. Non, doloremque vitae. Laborum cupiditate dolorem nesciunt assumenda? Eveniet sapiente exercitationem nobis esse libero veniam, ducimus beatae.</p>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <span class="material-icons" id="close">
+                close
+                </span>
+                <div class="form">
+                    <h2>sign in</h2>
+                    <div class="inputBox">
+                        <input type="text" required="required">
+                        <span>Username</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" required="required">
+                        <span>Password</span>
+                        <i></i>
+                    </div>
+                    <div class="links">
+                        <a href="#">Forgot Password</a>
+                        <a href="#">sign up</a>
+                    </div>
+                    <input type="submit" value="Login">
+                </div>
+        </div>
+    </div>
+    <audio src="space-chillout-14194.mp3" autoplay ></audio>
+    <script>
+    document.getElementById("login").addEventListener("click", function(){
+        document.querySelector(".popup").style.display = "flex"; 
+    })
+    document.getElementById("close").addEventListener("click", function(){
+        document.querySelector(".popup").style.display = "none";
+    })
+    </script>
+</body>
+</html>

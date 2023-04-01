@@ -1,0 +1,467 @@
+:root{
+    --color-one:#0D0D0D;
+    --color-tow:#F22613;
+    --color-three:#F2F2F2;
+    --color-four:#037373;
+    --color-five:#048C7F;
+    --color-six:#32323299;
+    --color-7: #00ffe5;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    scroll-behavior: smooth;  
+}
+body{
+    background-color: var(--color-one) ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--color-six);
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(315deg,var(--color-tow),var(--color-7));
+    border-radius: 5px;
+}
+.box{
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 60px 20px;
+    width: 95%;
+    height: 150vh;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.box::before{
+    content:'';
+    position: absolute;
+    inset:-450px 500px;
+    background: linear-gradient(315deg,var(--color-tow),var(--color-7));
+    transition: 0.5s;
+    animation: logo 4s linear infinite;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background:var(--color-one) ;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* start navbar */
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin:5px 0 0 0;
+    border: 5px;
+    padding: 5px;
+    background-color: var(--color-tow);
+    border-radius: 10px;
+    display: flex;
+    z-index: 3;
+}
+h1{
+    color: var(--color-three);
+    
+    
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    margin: auto;
+}
+ul li{
+    margin: 0 10px 0 10px;
+}
+ul li a{
+    text-decoration: none;
+    color: var(--color-three);
+    padding: 8px;
+}
+ul li :hover:not(active){
+    color: var(--color-tow);
+    background-color: var(--color-three);
+    border-radius: 4px;
+    
+}
+.active{
+    background-color: var(--color-three);
+    color: var(--color-tow);
+    border-radius: 4px;
+}
+/* navbar end */
+/* start my logo */
+.imge{
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    margin-left: 40%;
+    margin-top: 30px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+
+}
+.imge::before{
+    content:'';
+    position: absolute;
+    inset:-10px 100px;
+    background: linear-gradient(315deg,var(--color-tow),var(--color-7));
+    transition: 0.5s;
+    animation: logo 4s linear infinite; 
+}
+.imge:hover::before{
+    inset: -20px 0px;
+}
+@keyframes logo{
+    0%  { transform:   rotate(0deg);}
+    100%{ transform: rotate(360deg);}
+}
+.imge::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background:var(--color-one) ;
+    border-radius: 50%;
+    z-index: 1;
+}
+.logo-content{
+    position: absolute;
+    inset: 20px;
+    border:4px solid #00000080;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logo-content img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 8px;
+    left: 5px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 3;
+}
+.imge:hover .logo-content img{
+    opacity: 0;
+}
+.logo-content h2{
+    position: relative;
+    font-size: 0.8em;
+    text-align: center;
+    color: var(--color-three);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.logo-content h2 span{
+    font-size: 0.75em;
+    font-weight: 300;
+}
+.logo-content a{
+    position: relative;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(315deg,var(--color-tow),var(--color-7));
+    color: var(--color-one);
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.05;
+    text-decoration: none;
+    transition: 0.5s;
+    animation: login 4s linear infinite;
+}
+.logo-content a:hover{
+    letter-spacing: 0.2em;
+
+}
+/* my logo end */
+/* start pragraf about me */
+.pragraf{ 
+    position:relative;
+    margin: 30px;
+    border: 20px outset var(--color-7);
+    border-radius: 40px;
+    padding: 10px;
+    text-align: center;
+    z-index: 2;
+}
+.pragraf p{
+    color: var(--color-four);
+}
+/* pragraf about me end */
+/* start popup sign in */
+.popup{
+    background: var(--color-six);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+.popup-content{
+    height: 420px;
+    width: 380px;
+    background: var(--color-one);
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden ;
+}
+.popup-content::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, var(--color-tow), var(--color-tow));
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+.popup-content::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, var(--color-tow), var(--color-tow));
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.material-icons{
+    top: -0.5px;
+    right:-0.5px;
+    position: absolute;
+    color: var(--color-tow);
+    cursor: pointer;
+    z-index: 11;
+}
+.form{
+    position: absolute;
+    inset: 2px;
+    background: var(--color-one);
+    z-index: 10;
+    border-radius: 5px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+.form h2{
+    color: var(--color-7);
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.inputBox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--color-one);
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 10;
+}
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    color: #8f8f8f;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    color: var(--color-7);
+    transform: translateX(0px) translateY(-34px);
+    font-size: 0.75em;
+} 
+.inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-7);
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i{
+    height: 44px;
+}
+.links{
+    display: flex;
+    justify-content: space-between;   
+}
+.links a{
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #8f8f8f;
+    text-decoration: none;
+}
+.links a:hover,
+.links a:nth-child(2){
+    color:var(--color-tow)
+}
+input[type='submit']{
+    border: none;
+    outline: none;
+    background: linear-gradient(315deg,var(--color-tow),var(--color-7));
+    padding: 11px 25px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: login 4s linear infinite;
+}
+@keyframes login{
+    0%{background: linear-gradient(0deg     ,var(--color-tow),var(--color-7));}
+    1%{background: linear-gradient(3.6deg   ,var(--color-tow),var(--color-7));}
+    2%{background: linear-gradient(7.2deg   ,var(--color-tow),var(--color-7));}
+    3%{background: linear-gradient(10.8deg  ,var(--color-tow),var(--color-7));}
+    4%{background: linear-gradient(14.4deg  ,var(--color-tow),var(--color-7));}
+    5%{background: linear-gradient(18deg    ,var(--color-tow),var(--color-7));}
+    6%{background: linear-gradient(21.6deg  ,var(--color-tow),var(--color-7));}
+    7%{background: linear-gradient(25.2deg  ,var(--color-tow),var(--color-7));}
+    8%{background: linear-gradient(28.8deg  ,var(--color-tow),var(--color-7));}
+    9%{background: linear-gradient(32.4deg  ,var(--color-tow),var(--color-7));}
+    10%{background: linear-gradient(36deg   ,var(--color-tow),var(--color-7));}
+    11%{background: linear-gradient(39.6deg ,var(--color-tow),var(--color-7));}
+    12%{background: linear-gradient(43.2deg ,var(--color-tow),var(--color-7));}
+    13%{background: linear-gradient(46.8deg ,var(--color-tow),var(--color-7));}
+    14%{background: linear-gradient(50.4deg ,var(--color-tow),var(--color-7));}
+    15%{background: linear-gradient(54deg   ,var(--color-tow),var(--color-7));}
+    16%{background: linear-gradient(57.6deg ,var(--color-tow),var(--color-7));}
+    17%{background: linear-gradient(61.2deg ,var(--color-tow),var(--color-7));}
+    18%{background: linear-gradient(64.8deg ,var(--color-tow),var(--color-7));}
+    19%{background: linear-gradient(68.4deg ,var(--color-tow),var(--color-7));}
+    20%{background: linear-gradient(72deg   ,var(--color-tow),var(--color-7));}
+    21%{background: linear-gradient(75.6deg ,var(--color-tow),var(--color-7));}
+    22%{background: linear-gradient(79.2deg ,var(--color-tow),var(--color-7));}
+    23%{background: linear-gradient(82.8deg ,var(--color-tow),var(--color-7));}
+    24%{background: linear-gradient(86.4deg ,var(--color-tow),var(--color-7));}
+    25%{background: linear-gradient(90deg ,var(--color-tow),var(--color-7));}
+    26%{background: linear-gradient(93.6deg ,var(--color-tow),var(--color-7));}
+    27%{background: linear-gradient(97.2deg ,var(--color-tow),var(--color-7));}
+    28%{background: linear-gradient(100.8deg,var(--color-tow),var(--color-7));}
+    29%{background: linear-gradient(104.4deg,var(--color-tow),var(--color-7));}
+    30%{background: linear-gradient(108deg,var(--color-tow),var(--color-7));}
+    31%{background: linear-gradient(111.6deg,var(--color-tow),var(--color-7));}
+    32%{background: linear-gradient(115.2deg,var(--color-tow),var(--color-7));}
+    33%{background: linear-gradient(118.8deg,var(--color-tow),var(--color-7));}
+    34%{background: linear-gradient(126deg,var(--color-tow),var(--color-7));}
+    35%{background: linear-gradient(129.6deg,var(--color-tow),var(--color-7));}
+    36%{background: linear-gradient(133.2deg,var(--color-tow),var(--color-7));}
+    37%{background: linear-gradient(136.8deg,var(--color-tow),var(--color-7));}
+    38%{background: linear-gradient(140.4deg,var(--color-tow),var(--color-7));}
+    39%{background: linear-gradient(144deg,var(--color-tow),var(--color-7));}
+    40%{background: linear-gradient(147.6deg,var(--color-tow),var(--color-7));}
+    41%{background: linear-gradient(151.2deg,var(--color-tow),var(--color-7));}
+    42%{background: linear-gradient(154.8deg,var(--color-tow),var(--color-7));}
+    43%{background: linear-gradient(158.4deg,var(--color-tow),var(--color-7));}
+    44%{background: linear-gradient(162deg,var(--color-tow),var(--color-7));}
+    45%{background: linear-gradient(165.6deg,var(--color-tow),var(--color-7));}
+    46%{background: linear-gradient(169.2deg,var(--color-tow),var(--color-7));}
+    47%{background: linear-gradient(172.8deg,var(--color-tow),var(--color-7));}
+    48%{background: linear-gradient(176.4deg,var(--color-tow),var(--color-7));}
+    49%{background: linear-gradient(180deg,var(--color-tow),var(--color-7));}
+    50%{background: linear-gradient(183.6deg,var(--color-tow),var(--color-7));}
+    51%{background: linear-gradient(187.2deg,var(--color-tow),var(--color-7));}
+    52%{background: linear-gradient(190.8deg,var(--color-tow),var(--color-7));}
+    53%{background: linear-gradient(194.4deg,var(--color-tow),var(--color-7));}
+    54%{background: linear-gradient(198deg,var(--color-tow),var(--color-7));}
+    55%{background: linear-gradient(201.6deg,var(--color-tow),var(--color-7));}
+    56%{background: linear-gradient(205.2deg,var(--color-tow),var(--color-7));}
+    57%{background: linear-gradient(208.8deg,var(--color-tow),var(--color-7));}
+    58%{background: linear-gradient(212.4deg,var(--color-tow),var(--color-7));}
+    59%{background: linear-gradient(216deg,var(--color-tow),var(--color-7));}
+    60%{background: linear-gradient(219.6deg,var(--color-tow),var(--color-7));}
+    61%{background: linear-gradient(223.2deg,var(--color-tow),var(--color-7));}
+    62%{background: linear-gradient(226.8deg,var(--color-tow),var(--color-7));}
+    63%{background: linear-gradient(230.4deg,var(--color-tow),var(--color-7));}
+    64%{background: linear-gradient(234deg,var(--color-tow),var(--color-7));}
+    65%{background: linear-gradient(237.6deg,var(--color-tow),var(--color-7));}
+    66%{background: linear-gradient(241.2deg,var(--color-tow),var(--color-7));}
+    67%{background: linear-gradient(244.8deg,var(--color-tow),var(--color-7));}
+    68%{background: linear-gradient(248.4deg,var(--color-tow),var(--color-7));}
+    69%{background: linear-gradient(252deg,var(--color-tow),var(--color-7));}
+    70%{background: linear-gradient(255.6deg,var(--color-tow),var(--color-7));}
+    71%{background: linear-gradient(259.2deg,var(--color-tow),var(--color-7));}
+    72%{background: linear-gradient(262.8deg,var(--color-tow),var(--color-7));}
+    73%{background: linear-gradient(266.4deg,var(--color-tow),var(--color-7));}
+    74%{background: linear-gradient(270deg,var(--color-tow),var(--color-7));}
+    75%{background: linear-gradient(273.6deg,var(--color-tow),var(--color-7));}
+    76%{background: linear-gradient(277.2deg,var(--color-tow),var(--color-7));}
+    77%{background: linear-gradient(280.5deg,var(--color-tow),var(--color-7));}
+    78%{background: linear-gradient(284.1deg,var(--color-tow),var(--color-7));}
+    79%{background: linear-gradient(287.7deg,var(--color-tow),var(--color-7));}
+    80%{background: linear-gradient(291.3deg,var(--color-tow),var(--color-7));}
+    81%{background: linear-gradient(294.9deg,var(--color-tow),var(--color-7));}
+    82%{background: linear-gradient(298.5deg,var(--color-tow),var(--color-7));}
+    83%{background: linear-gradient(302.1deg,var(--color-tow),var(--color-7));}
+    84%{background: linear-gradient(305.7deg,var(--color-tow),var(--color-7));}
+    85%{background: linear-gradient(309.3deg,var(--color-tow),var(--color-7));}
+    86%{background: linear-gradient(312.9deg,var(--color-tow),var(--color-7));}
+    87%{background: linear-gradient(316.5deg,var(--color-tow),var(--color-7));}
+    88%{background: linear-gradient(319.8deg,var(--color-tow),var(--color-7));}
+    89%{background: linear-gradient(323.4deg,var(--color-tow),var(--color-7));}
+    90%{background: linear-gradient(327deg,var(--color-tow),var(--color-7));}
+    91%{background: linear-gradient(330.6deg,var(--color-tow),var(--color-7));}
+    92%{background: linear-gradient(334.2deg,var(--color-tow),var(--color-7));}
+    93%{background: linear-gradient(337.8deg,var(--color-tow),var(--color-7));}
+    94%{background: linear-gradient(341.4deg,var(--color-tow),var(--color-7));}
+    95%{background: linear-gradient(345deg  ,var(--color-tow),var(--color-7));}
+    96%{background: linear-gradient(348.6deg,var(--color-tow),var(--color-7));}
+    97%{background: linear-gradient(352.2deg,var(--color-tow),var(--color-7));}
+    98%{background: linear-gradient(355.8deg,var(--color-tow),var(--color-7));}
+    99%{background: linear-gradient(359.4deg,var(--color-tow),var(--color-7));}
+    100%{background: linear-gradient(360deg ,var(--color-tow),var(--color-7));}
+    /* 0%{background: linear-gradient(315deg,var(--color-tow),var(--color-7));}
+    0%{background: linear-gradient(315deg,var(--color-tow),var(--color-7));} */
+}
+input[type='submit']:active{
+    opacity: 0.8;
+}
+/* popup sign in end */
